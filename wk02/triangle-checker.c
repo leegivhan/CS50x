@@ -7,29 +7,24 @@ bool valid_triangle (float a, float b, float c);
 
 int main(void)
 {
-    // Declare sides of triangle
-    float first_side, second_side, third_side, two_sides;
 
-    // Ask user for input
-    do
+    // Get user input
+    float first_side = get_float("Enter first side of triangle: ");
+    float second_side = get_float("Enter second side of triangle: ");
+    float third_side = get_float("Enter third side of triangle: ");
+
+    // Check if triangle is valid via function call
+    bool  answer = valid_triangle(first_side, second_side, third_side);
+
+    // Tells user if triangle is valid
+    if (answer == 0)
     {
-        first_side = get_float("Enter first side of triangle: ");
+        printf("This is not a triangle\n");
     }
-    while (first_side <= 0);
-
-    do
+    if (answer == 1)
     {
-        second_side = get_float("Enter second side of triangle: ");
+        printf("This is a triangle\n");
     }
-    while (second_side <= 0);
-
-    do
-    {
-        third_side = get_float("Enter third side of triangle: ");
-    }
-    while (third_side <= 0);
-
-    bool  answer = valid_triangle (first_side, second_side, third_side);
 }
 
 bool valid_triangle (float a, float b, float c)

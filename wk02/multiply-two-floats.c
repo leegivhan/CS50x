@@ -2,23 +2,22 @@
 #include <cs50.h>
 
 // declare functions
-float multiply_two_floats(float a, float b);
+double multiply_two_doubles(double a, double b);
 
 int main(void) 
 {
-    // Get floats from user
-    float x = get_float("Enter first number: ");
-    float y = get_float("Enter second number: ");
+    // Get doubles from user
+    double x = get_double("Enter first number: ");
+    double y = get_double("Enter second number: ");
 
     // multiply numbers via function call
-    float z = multiply_two_floats(x, y);
+    double z = multiply_two_doubles(x, y);
 
     // Output the result
     printf("The sum of %f and %f is %f\n", x, y, z);
 }
 
-float multiply_two_floats(float a, float b)
+double multiply_two_doubles(double a, double b)
 {
-    float sum = a * b;
-    return sum;
+    return a * b;
 }
