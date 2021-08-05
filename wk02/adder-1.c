@@ -9,10 +9,7 @@ int main(void)
 {
     // ask user for input
     int x = get_int("Give me an integer: ");
-    // int x = GetInt();
     int y = get_int("Give me another integer: ");
-    // printf("Give me another integer: ");
-    // int y = GetInt();
 
     // add the two numbers together via a function call
     int z = add_two_ints(x, y);
