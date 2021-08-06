@@ -4,6 +4,7 @@
 #include <cs50.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
 // returns number of letters in string.
 int count_letters(string letters);
