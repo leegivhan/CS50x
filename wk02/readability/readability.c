@@ -10,7 +10,7 @@ int getNumScentences(string text);
 int getGradeLevel(int numLetters, int numScentences, int numWords);
 void printGradeLevel(int gradeLevel);
 
-int main(int argc, string argv[])
+int main(void)
 {
     string text = get_string("Text: ");
     
