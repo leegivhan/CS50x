@@ -1,47 +1,61 @@
-// Takes a text and determines its reading level
-// includes
 #include <stdio.h>
 #include <cs50.h>
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
 
-// returns number of letters in string.
-int count_letters(string letters);
+int getNumLetters(string text);
+int getNumWords(string text);
+int getNumScentences(string text);
+int getGradeLevel(int numLetters, int numScentences, int numWords);
+void printGradeLevel(int gradeLevel);
 
-// returns number of words in string
-int count_words(string words);
-
-// returns number of scentences in a string
-int count_scentences(string scentences);
-
-int main(void)
+int main(int argc, string argv[])
 {
-    // prompts user for text
     string text = get_string("Text: ");
-    // gets letter count via letter_count function
-    int letter_count = count_letters(text);
-    // gets word count via word_count function
-    int word_count = count_words(text);
-    // gets scentence count via scentence_count function
-    int scentence_count = count_scentences(text);
     
-    // prints number of letters in text
-    printf("%i letter(s)\n", letter_count);
-    // prints number of words in text
-    printf("%i word(s)\n", word_count);
-    // prints number of scentences in text
-    printf("%i scentence(s)\n", scentence_count);
+    int numLetters = getNumLetters(text);
+    int numWords = getNumWords(text);
+    int numScentences = getNumScentences(text);
+    
+    int gradeLevel = getGradeLevel(numLetters, numScentences, numWords);
+    
+    printGradeLevel(gradeLevel);
 }
 
-int count_letters(string letters)
+void printGradeLevel(int gradeLevel)
 {
-    // number of letters count
+    if (gradeLevel <= 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (gradeLevel >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", gradeLevel);
+    }
+}
+
+int getGradeLevel(int numLetters, int numScentences, int numWords)
+{
+    float S = (numScentences / (float)numWords) * 100;
+    
+    float L = (numLetters / (float)numWords) * 100;
+    
+    return round(0.0588 * L - 0.296 * S - 15.8);
+}
+
+int getNumLetters(string text)
+{
+
     int letter_count = 0;
     
-    for (int i = 0, len = strlen(letters); i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        if (isalpha(letters[i]))
+        if (isalpha(text[i]))
         {
             letter_count++;
         }
@@ -49,14 +63,13 @@ int count_letters(string letters)
     return letter_count;
 }
 
-int count_words(string words)
+int getNumWords(string text)
 {
-    // number of white space characters
     int white_space = 1;
     
-    for (int i = 0, len = strlen(words); i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        if (isspace(words[i]))
+        if (isspace(text[i]))
         {
             white_space++;
         }
@@ -64,14 +77,14 @@ int count_words(string words)
     return white_space;
 }
 
-int count_scentences(string scentences)
+int getNumScentences(string text)
 {
     // initialize scentence count
     int scentence_count = 0;
-    
-    for (int i = 0, len = strlen(scentences); i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        if ((scentences[i] == '!') || (scentences[i] == '.') || (scentences[i] == '?'))
+        // Checks for symbols indicating the end of a scentence
+        if ((text[i] == '!') || (text[i] == '.') || (text[i] == '?'))
         {
             scentence_count++;
         }
