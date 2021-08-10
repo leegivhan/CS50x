@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 float global = 0.5050;
-// float triple(float x);
+void triple(void);
 
 int main(void)
 {
-    // void triple();
-    global = triple(global);
+    triple();
     printf("%f\n", global);
 }
 
 void triple(void)
 {
+    // float global = 2.1;
     global *= 3;
 }
