@@ -32,7 +32,7 @@ int main(int argc, string argv[])
     // prompts user for plaintext
     string text = get_string("plaintext: ");
 
-    // printf("cyphertext: ");
+    printf("ciphertext: ");
 
     // encypher plaintext
     for (int i = 0; i < strlen(text); i++)
@@ -52,7 +52,7 @@ int main(int argc, string argv[])
                 printf("%c", back_to_ascii); 
             }
             // preserves uppercase
-            if(isupper(text[i]))
+            if (isupper(text[i]))
             {
                 int alpha_index = text[i] - 65;
                 int encrypt = (alpha_index + int_input) % 26;
@@ -66,29 +66,6 @@ int main(int argc, string argv[])
         {
             printf("%c", text[i]);
         }    
-        // // Encrypts alphabetical character
-        // if (isalpha(text[i]))
-        //     {
-        //         printf("%c", (text[i] + int_input) % 26);    
-        //     }
-        //     // Prints non alphabetical character as is
-        //     if (!isalpha(text[i]))
-        //     {
-        //         printf("%c", text[i]);
-        //     }  
-        // if (islower(text[i]))
-        // {
-        //     printf("%c", islower(text[i]) + int_input);
-        // }
-        // if (isupper(text[i]))
-        // {
-        //     printf("%c", isupper(text[i]) + int_input);
-        // }
     }
-    printf("\n");
-    // printf("%i", int_input);
-
-    // if (isalpha(argv[1][i]))
-    
-    
+    printf("\n");  
 }
