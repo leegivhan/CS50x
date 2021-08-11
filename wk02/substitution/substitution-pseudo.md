@@ -10,13 +10,12 @@ int main(int argc, string argv[])
 }
 
 ## Validate key
-- Make sure there is an argument
-- Make sure there is only one argument
+- Throw an error if there isn't just one argument
 - Make sure argument is 26 characters
 - Make sure all chars are alphabetic - isalpha()
-- Make sure that no char is repeated (case-insensitive)
+## - Make sure that no char is repeated (case-insensitive) - strcasecmp(string s1, string s2);
 
-- Print corresponding error message and return value of 1
+- If input is invalid, print corresponding error message and return value of 1
 
 ## Get plaintext
 1b - Output: prompt user for plaintext - get_string()
