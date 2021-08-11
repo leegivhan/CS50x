@@ -30,7 +30,7 @@ int main(int argc, string argv[])
     // Gets text from user
     string text = get_string("plaintext: ");
 
-    // encrypts message
+    // encrypts message by 1
     for (int i = 0; i < strlen(text); i++)
     {
         if (isalpha(text[i]))
