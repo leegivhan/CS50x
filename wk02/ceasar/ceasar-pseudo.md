@@ -12,9 +12,9 @@ Command line argument example:
 - Shift all characters from the string by 1.
 
 - If letter is alphabetical, rotate by command line argument.
-- Lower case letters should remain lower case letters.
-- Uppercase letters should remain uppercase.
-- If character is not alphabetical, keep it the same
+- Lower case letters should remain lower case letters. islower('A) -> false
+- Uppercase letters should remain uppercase. isupper('A) -> true
+- If character is not alphabetical, keep it the same isalpha('A) -> true
 
 
 
