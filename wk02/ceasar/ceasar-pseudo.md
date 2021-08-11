@@ -14,6 +14,8 @@ Command line argument example:
 - Prompt user for text
 "plaintext: "
 
+- Shift all characters from the string by 1.
+
 Only rotate alphabetical letters.
 Lower case letters should remain lower case letters. Uppercase letters should remain uppercase.
 If it's neither a lower case or uppercase letter, print it as is.
