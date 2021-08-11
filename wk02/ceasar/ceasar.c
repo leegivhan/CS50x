@@ -29,20 +29,34 @@ int main(int argc, string argv[])
 
     // Gets text from user
     string text = get_string("plaintext: ");
-
+    printf("cyphertext: ");
     // encrypts message by 1
     for (int i = 0; i < strlen(text); i++)
     {
+        
+        if (int_input <= 26)
+        {
+            // Encrypts alphabetical character
+            if (isalpha(text[i]))
+            {
+                printf("%c", text[i] + int_input);    
+            }
+            // Prints non alphabetical character as is
+            if (!isalpha(text[i]))
+            {
+                printf("%c", text[i]);
+            }    
+        }
         // Encrypts alphabetical character
         if (isalpha(text[i]))
-        {
-            printf("%c", text[i] + int_input);    
-        }
-        // Prints non alphabetical character as is
-        if (!isalpha(text[i]))
-        {
-            printf("%c", text[i]);
-        }
+            {
+                printf("%c", (text[i] + int_input) % 26);    
+            }
+            // Prints non alphabetical character as is
+            if (!isalpha(text[i]))
+            {
+                printf("%c", text[i]);
+            }  
         // if (islower(text[i]))
         // {
         //     printf("%c", islower(text[i]) + int_input);
