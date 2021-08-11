@@ -1,30 +1,46 @@
 ## Substitution Pseudocode
 
-### 1a - Input: single 26 alphabetic character command line argument
+### Get key 
+1a - Input: single 26 alphabetic character command line argument
 ./substitution VCHPRZGJNTLSKFBDQWAXEUYMOI
 
-If user doesn't cooperate by...
-- Providing more than one argument
-- Not providing an argument
-- Providing a character that is not an alphabetic character
-- Providing key with repeating characters
+int main(int argc, string argv[])
+{
+    <!-- code here -->
+}
 
-- ...Then print error value of my choice like "Usage: ./substition key" and return value of 1
+## Validate key
+- Make sure there is an argument
+- Make sure there is only one argument
+- Make sure argument is 26 characters
+- Make sure all chars are alphabetic - isalpha()
+- Make sure that no char is repeated (case-insensitive)
 
-- If user doesn't provide a command line argument with 26 characters as key, print
-"Key must contain 26 characters."
+- Print corresponding error message and return value of 1
 
-- Program accepts 26 character command line argument that is case insensitive.
-
-### 1b - Output: prompt user for plaintext
+## Get plaintext
+1b - Output: prompt user for plaintext - get_string()
 plaintext:  
-
-### 2a - Input: users plaintext
+2a - Input: users plaintext
 hello, world
 
-### 2b - Output: ciphertext
+## Encipher
+- For each alphabetic character, determine what letter it maps to.
+- Leave non-alphabetic characters as-is.
+- Preserve case.
+
+## Print ciphertext
+2b - Output: ciphertext
+- Print enciphered version of user input
+"ciphertext: jrssb, ybwsp"
+- print a new line and exit program by returning 0 from main.
+
+Examples:
+
+$ ./substitution VCHPRZGJNTLSKFBDQWAXEUYMOI
+plaintext:  hello, world
 ciphertext: jrssb, ybwsp
-- encrypt messages using a command-line argument key of an encrypted (rearranged) alphabet
-- Neither comma nor space should be substituted by the cipher (only alpha characters)
-- Case of original message should be preserved
-- After outputting ciphertext, print a new line and exit program by returning 0 from main.
+
+$ ./substitution YTNSHKVEFXRBAUQZCLWDMIPGJO
+plaintext:  HELLO
+ciphertext: EHBBQ
