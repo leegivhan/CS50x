@@ -13,7 +13,8 @@ int main(int argc, string argv[])
 - Throw an error if there isn't just one argument
 - Make sure argument is 26 characters
 - Make sure all chars are alphabetic - isalpha()
-## - Make sure that no char is repeated (case-insensitive) - strcasecmp(string s1, string s2);
+- Make sure that no char is repeated 
+- Make sure no char is repeated case-insensitive - strcasecmp(string s1, string s2);
 
 - If input is invalid, print corresponding error message and return value of 1
 

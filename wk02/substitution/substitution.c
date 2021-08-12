@@ -37,10 +37,16 @@ int main(int argc, string argv[])
         for (int j = 1; i < strlen(argv[1]); j++)
         {
             // string s2 = argv[1][j];
+            int letter_count = 0;
             if (argv[1][i] == argv[1][j])
             {
-                printf("Error: Characters cannot repeat.\n");
-                return 1;    
+                letter_count++;
+                if (letter_count > 1)
+                {
+                    printf("Error: Characters cannot repeat.\n");
+                    return 1;    
+                }
+                    
             }
             
         }
