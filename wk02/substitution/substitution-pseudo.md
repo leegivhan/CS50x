@@ -24,9 +24,12 @@ plaintext:
 hello, world
 
 ## Encipher
-- For each alphabetic character, determine what letter it maps to.
-- Leave non-alphabetic characters as-is.
-- Preserve case.
+For each character in the plaintext input
+If it is a alphabetic character
+Find the characters alphabetic index
+Find what letter is at that index in the commandline argument (case insensititive)
+Print that letter in the same case as it is in the plaintext
+Leave non-alphabetic characters as-is, printing them.
 
 ## Print ciphertext
 2b - Output: ciphertext
