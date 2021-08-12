@@ -15,7 +15,6 @@ int main(int argc, string argv[])
 - Make sure all chars are alphabetic - isalpha()
 - Make sure that no char is repeated 
 - Make sure no char is repeated case-insensitive - strcasecmp(string s1, string s2);
-
 - If input is invalid, print corresponding error message and return value of 1
 
 ## Get plaintext

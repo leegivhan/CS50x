@@ -20,6 +20,7 @@ int main(int argc, string argv[])
         printf("Error: Argument must be 26 characters long.\n");
         return 1;
     }
+    
     // verifies that all characters are alphabetic
     for (int i = 0; i < strlen(argv[1]); i++)
     {
@@ -34,21 +35,15 @@ int main(int argc, string argv[])
     for (int i = 0; i < strlen(argv[1]); i++)
     {
         // string s1 = argv[1][i];
-        for (int j = 1; i < strlen(argv[1]); j++)
+        for (int j = i + 1; j < strlen(argv[1]); j++)
         {
-            // string s2 = argv[1][j];
-            int letter_count = 0;
-            if (argv[1][i] == argv[1][j])
+            if (tolower(argv[1][i]) == tolower(argv[1][j]))
             {
-                letter_count++;
-                if (letter_count > 1)
-                {
-                    printf("Error: Characters cannot repeat.\n");
-                    return 1;    
-                }
-                    
+                printf("No repeating characters allowed.\n");
+                return 1;
             }
-            
         }
     }
+    
+    string plaintext = get_string("Plaintext: ");
 }
