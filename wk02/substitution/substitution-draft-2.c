@@ -3,7 +3,6 @@
 #include <string.h> // for strlen
 #include <ctype.h> // for tolower, islower, toupper, isupper, isalpha
 
-void convertToUpperCase();
 bool validateKey();
 bool verifyKeyOnlyContainsLetters();
 bool checkIfKeyContainsAllUniqueCharacters();
@@ -43,19 +42,19 @@ int main(int argc, string argv[])
 // Performs various checks to ensure key is valid.
 bool validateKey()
 {
-    if (!verifyKeyOnlyContainsLetters()) // See line __.
+    if (!verifyKeyOnlyContainsLetters()) // See line 67.
     {
         printf("Error: Key must be only letters.\n");
             return false;
     }
     
-    if (strlen(key) != 26) // Esures argument is 26 characters long
+    if (strlen(key) != 26) // Esures argument is 26 characters long.
     {
         printf("Error: Argument must be exactly 26 characters long.\n");
         return false;
     }
 
-    if (!checkIfKeyContainsAllUniqueCharacters()) // See line __.
+    if (!checkIfKeyContainsAllUniqueCharacters()) // See line 79.
     {
         printf("No repeating characters allowed.\n");
         return false;
@@ -79,13 +78,13 @@ bool verifyKeyOnlyContainsLetters()
 
 bool checkIfKeyContainsAllUniqueCharacters()
 {
-    // takes a letter starting from the beginning of the key
+    // Takes a letter starting from the beginning of the key.
     for (int i = 0; i < strlen(key); i++) 
     {
-        // looks at all the letters following that letter
+        // Looks at all the letters following that letter.
         for (int j = i + 1; j < strlen(key); j++) 
         {
-            // If a duplicate is found, false is returned
+            // If a duplicate is found, false is returned.
             if (tolower(key[i]) == tolower(key[j]))
             {
                 return false;
@@ -99,17 +98,17 @@ string convertToCipherText(string plaintext)
 {
     string ciphertext = plaintext;
 
-    // for each character in the plaintext input
+    // For each character in the plaintext input.
     for (int i = 0; i < strlen(plaintext); i++)
     {
-        // If plaintext char is an alphabetic character
+        // If plaintext char is an alphabetic character.
         if (isalpha(plaintext[i]))
         {
             // Checks if character is lowercase.
             if (islower(plaintext[i]))
             {
-                // Converts character to its alphabetic index (see asciichart.com)
-                // replaces plaintext char with ciphertext char from corresponding key index
+                // Converts character to its alphabetic index (see asciichart.com).
+                // replaces plaintext char with ciphertext char from corresponding key index.
                 ciphertext[i] = tolower(key[plaintext[i] - 97]); 
             }
             // Same as previous but for uppercase.
@@ -119,7 +118,7 @@ string convertToCipherText(string plaintext)
             }
         }
 
-        // If block to leave punctiation
+        // If block to leave punctuation.
         if (!isalpha(plaintext[i]))
         {
             ciphertext[i] = plaintext[i];
