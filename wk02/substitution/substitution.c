@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <cs50.h>
-#include <string.h>
-#include <strings.h>
-#include <ctype.h>
-#include <stdlib.h>
+#include <stdio.h> // for printf
+#include <cs50.h> // for get_string
+#include <string.h> // for strlen
+#include <ctype.h> // for tolower, islower, toupper, isupper, isalpha
 
 // Gets key from user at command line
 int main(int argc, string argv[])
