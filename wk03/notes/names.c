@@ -1,13 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-    int numbers[] = {4, 6, 8, 2, 7, 5, 0};
+    string names[] = {"Bill", "Charlie", "Fred", "George", "Ginny", "Percy", "Ron"};
 
     for (int i = 0; i < 7; i++)
     {
-        if (numbers[i] == 0)
+        // Compares strings, returning 0 if they match
+        if (strcmp(names[i], "Ron") == 0)
         {
             printf("Found\n");
             return 0;
