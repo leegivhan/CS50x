@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // Functions defined
-void swap (int *xp, int *yp); //Line 23
+void swap(int *xp, int *yp); //Line 23
 void selectionSort (int arr[], int n); // Line 31
 void printArray(int arr[], int size); // Line 52
 
