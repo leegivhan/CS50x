@@ -4,7 +4,7 @@ int fact(int n);
 
 int main(void)
 {
-    int factorial = 4;
+    int factorial = 5;
     int answer = fact(factorial);
 
     printf("The factorial of %i is %i.\n", factorial, answer);
@@ -12,8 +12,11 @@ int main(void)
 
 int fact(int n)
 {
-    if (n == 1)
-        return 1;
-    else
-        return n * fact(n-1);
+    int product = 1;
+    while (n > 0)
+    {
+        product *= n;
+        n--;
+    }
+    return product;
 }
